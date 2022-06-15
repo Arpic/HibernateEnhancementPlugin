@@ -1,4 +1,4 @@
-package com.github.arpic.hibernateenhancementplugin
+package ch.namlin.hibernateenhancement
 
 import com.intellij.DynamicBundle
 import org.jetbrains.annotations.NonNls

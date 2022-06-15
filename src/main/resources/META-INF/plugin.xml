@@ -1,22 +1,15 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.arpic.hibernateenhancementplugin</id>
-    <name>HibernateEnhancementPlugin</name>
-    <vendor>arpic</vendor>
+    <id>ch.namlin.hibernateenhancement</id>
+    <name>Hibernate Bytecode Enhancement</name>
+    <vendor>Namlin</vendor>
 
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.modules.java</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.arpic.hibernateenhancementplugin.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.arpic.hibernateenhancementplugin.services.MyProjectService"/>
         <buildProcess.parametersProvider
                 implementation="ch.namlin.hibernateenhancement.BuildClasspathProvider"/>
         <compileServer.plugin classpath="hibernateenhancement-jps-plugin.jar"/>
     </extensions>
-
-    <applicationListeners>
-        <listener class="com.github.arpic.hibernateenhancementplugin.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
-    </applicationListeners>
 </idea-plugin>
