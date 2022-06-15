@@ -5,10 +5,14 @@
     <vendor>arpic</vendor>
 
     <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.java</depends>
 
     <extensions defaultExtensionNs="com.intellij">
         <applicationService serviceImplementation="com.github.arpic.hibernateenhancementplugin.services.MyApplicationService"/>
         <projectService serviceImplementation="com.github.arpic.hibernateenhancementplugin.services.MyProjectService"/>
+        <buildProcess.parametersProvider
+                implementation="ch.namlin.hibernateenhancement.BuildClasspathProvider"/>
+        <compileServer.plugin classpath="hibernateenhancement-jps-plugin.jar"/>
     </extensions>
 
     <applicationListeners>
